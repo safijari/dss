@@ -16,7 +16,7 @@ ExecStart={start_command}
 WantedBy={target}.target"""
 
 
-def make_systemd_service(name, description, service_user, service_type='simple', restart_on_fail=True, wanted_by='multi-user'):
+def make_systemd_service(name, description, service_user, start_command, service_type='simple', restart_on_fail=True, wanted_by='multi-user'):
     if restart_on_fail:
         restart_block = "Restart=on-failure"
 
